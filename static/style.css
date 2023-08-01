@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #202020; /* Dark background color */
+    color: #ffffff; /* Text color */
+    margin: 20px;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ffffff;
+    background-color: #333333; /* Input field background color */
+    color: #ffffff; /* Input field text color */
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Submit button background color */
+    color: #ffffff; /* Submit button text color */
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Hover color for submit button */
+}
+#hiddenDiv {
+    display: none;
+    padding: 20px;
+    margin-top: 20px;
+    display: hidden; /* Change display to flex */
+    flex-direction: column; /* Arrange elements vertically */
+    font-weight: bold; /* Bold the text */
+    max-height: 150px; /* Set a maximum height for the div */
+    overflow-y: auto; /* Enable vertical scroll if content exceeds the maximum height */
+    color: #f9f6f6;
+    align-items: center;
+    justify-items: center;
+    height: 75px;
+}

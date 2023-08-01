@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cricket Score Prediction</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Cricket Score Prediction</h1>
+    <form id="myForm" action="/predict" method="post">
+        <label for="batting_team">Batting Team:</label>
+        <input type="text" id="batting_team" name="batting_team" required><br>
+
+        <label for="bowling_team">Bowling Team:</label>
+        <input type="text" id="bowling_team" name="bowling_team" required><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="current_score">Current Score:</label>
+        <input type="number" id="current_score" name="current_score" required><br>
+
+        <label for="balls_left">Balls Left:</label>
+        <input type="number" id="balls_left" name="balls_left" required><br>
+
+        <label for="wickets_left">Wickets Left:</label>
+        <input type="number" id="wickets_left" name="wickets_left" required><br>
+
+        <label for="current_rr">Current Run Rate:</label>
+        <input type="number" step="0.01" id="current_rr" name="current_rr" required><br>
+
+        <label for="last_five">Run in last 5 over:</label>
+        <input type="number" id="last_five" name="last_five" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    
+
+    <div id="hiddenDiv">
+        <!-- The div content that will be hidden initially -->
+         <span id="predictionValue"></span>
+    </div>
+
+    
+    <script>
+        // JavaScript code goes here
+        const myForm = document.getElementById('myForm');
+        const hiddenDiv = document.getElementById('hiddenDiv');
+        const predictionValueSpan = document.getElementById('predictionValue');
+
+        myForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = new FormData(myForm);
+
+            // Make AJAX request to the Flask server
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the response as JSON
+            })
+            .then(data => {
+                // Read the prediction value from the JSON response
+                const predictionValue = data.prediction;
+
+                // Show the hidden div
+                hiddenDiv.style.display = 'flex';
+                // Update the content of the span with the prediction value
+                predictionValueSpan.textContent = "Predicted Score: " + predictionValue;
+            })
+            .catch(error => {
+                console.error('Error occurred during prediction:', error);
+                const predictedScoreSpan = document.getElementById('predictedScore');
+                predictedScoreSpan.textContent = "Error occurred during prediction.";
+            });
+        });
+    </script>
+        </body>
+</html>
