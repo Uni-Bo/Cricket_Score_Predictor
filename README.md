@@ -3,19 +3,32 @@
 ## Introduction
 
 Welcome to the Cricket Score Predictor repository! This is where the magic of machine learning meets the excitement of T20 cricket. The code in this repository showcases a powerful machine learning system designed to predict the scores of T20 cricket matches accurately.
+![Score Predictor](images/predictor.png)
+![Accuracy](images/accuracy.png)
 
 ## Table of Contents
 
 - [Project Description](#project-description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
 - [Acknowledgments](#acknowledgments)
 
 ## Project Description
 
 The Cricket Score Predictor is a fascinating machine learning project tailored specifically for T20 cricket enthusiasts. With the integration of cutting-edge algorithms, it accurately forecasts the scores of T20 cricket matches, providing valuable insights into the game's dynamics and potential outcomes.
+### Feature and Accuracy
+#### Features:     
+    "batting_team"
+    "bowling_team"
+    "city"
+    "current_score"
+    "balls_left"
+    "wickets_left"
+    "crr"
+    "last_five" 
+#### Label: 
+    "run_x"
+Accuracy in terms of [R Square Value] 0.98890
 
 ## Installation
 
@@ -32,14 +45,6 @@ To set up the Cricket Score Predictor on your local machine, follow these steps:
 ## Usage
 
 This repository contains the complete code for the Cricket Score Predictor system. To utilize this system for score predictions, please follow the instructions outlined in the project's directory. You can feed in relevant match data, and the predictor will deliver accurate score estimates.
-
-## Documentation
-
-We understand the significance of clarity and knowledge sharing. Therefore, the Cricket Score Predictor comes equipped with comprehensive documentation. The documentation provides insights into the project's design, algorithms used, and details of the dataset employed. You'll also find step-by-step instructions on setting up and using the predictor effectively. For detailed documentation, visit [here](https://github.com/Uni-Bo/Cricket_Score_Predictor/documentation).
-
-## Contributing
-
-We deeply appreciate your interest in contributing to the Cricket Score Predictor. However, at this moment, we are not accepting external contributions. Nevertheless, you are encouraged to fork this repository and adapt the predictor for your personal exploration or educational purposes.
 
 ## Acknowledgments
 
