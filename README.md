@@ -3,7 +3,9 @@
 ## Introduction
 
 Welcome to the Cricket Score Predictor repository! This is where the magic of machine learning meets the excitement of T20 cricket. The code in this repository showcases a powerful machine learning system designed to predict the scores of T20 cricket matches accurately.
+### Website preview:
 ![Score Predictor](images/predictor.png)
+### Accuracy:
 ![Accuracy](images/accuracy.png)
 
 ## Table of Contents
